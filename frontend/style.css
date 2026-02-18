@@ -1,0 +1,137 @@
+body {
+  font-family: "Fira Sans", "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 32px;
+  background: #f6f2ed;
+  color: #1d1b19;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page__header {
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e0d6cd;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 24px rgba(47, 35, 23, 0.08);
+}
+
+.panel--compact {
+  max-width: 420px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px 20px;
+  align-items: end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6a5d52;
+}
+
+.field input,
+.field select {
+  border: 1px solid #d6ccc2;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: normal;
+  background: #fff;
+  color: #1d1b19;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 600;
+  background: #1d1b19;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6a5d52;
+  border-bottom: 1px solid #e5ddd6;
+  padding-bottom: 8px;
+}
+
+.table td {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee6df;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.cell-right {
+  text-align: right;
+}
+
+.inline-select {
+  border: 1px solid #d6ccc2;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: #fff;
+  font-size: 14px;
+  color: #1d1b19;
+}
+
+.state {
+  margin: 0;
+  color: #5a5048;
+}
+
+.state--error {
+  color: #a12b1c;
+}
+
+.games {
+  margin: 0;
+  padding-left: 18px;
+  color: #5a5048;
+}
