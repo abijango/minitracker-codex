@@ -1,4 +1,4 @@
-.PHONY: db-init backend-test backend-run frontend-build frontend-serve all
+.PHONY: db-init backend-test backend-run frontend-build frontend-serve dev all
 
 BACKEND_DIR = backend
 FRONTEND_DIR = frontend
@@ -42,5 +42,15 @@ frontend-build:
 
 frontend-serve:
 	@cd $(FRONTEND_DIR) && trunk serve
+
+dev:
+	@$(DB_INIT)
+ifeq ($(OS),Windows_NT)
+	@cd $(BACKEND_DIR); Start-Process powershell -ArgumentList "-NoProfile -Command $(SET_DB_URL) cargo run"
+	@cd $(FRONTEND_DIR); Start-Process powershell -ArgumentList "-NoProfile -Command trunk serve"
+else
+	@cd $(BACKEND_DIR) && $(SET_DB_URL) cargo run &
+	@cd $(FRONTEND_DIR) && trunk serve
+endif
 
 all: db-init backend-test frontend-build
